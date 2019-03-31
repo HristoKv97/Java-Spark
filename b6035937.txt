@@ -1,0 +1,237 @@
+
+Database Technology
+
+
+
+
+-------------------Task 1-------------------
+root
+ |-- userId: integer (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- rating: double (nullable = true)
+ |-- timestamp: integer (nullable = true)
+
+root
+ |-- movieId: integer (nullable = true)
+ |-- title: string (nullable = true)
+ |-- genres: string (nullable = true)
+
+-------------------Task 2-------------------
+-------------------Task 3-------------------
+root
+ |-- movieId: integer (nullable = true)
+ |-- genres: string (nullable = true)
+
++-------+------------------+
+|movieId|genres            |
++-------+------------------+
+|176279 |(no genres listed)|
+|176275 |(no genres listed)|
+|176273 |Action            |
+|176273 |Drama             |
+|176273 |Thriller          |
+|176271 |Drama             |
+|176269 |Drama             |
+|176269 |Children          |
+|176267 |Drama             |
+|176267 |Romance           |
+|176267 |Action            |
+|176263 |Sci-Fi            |
+|176259 |Horror            |
+|176257 |Horror            |
+|176257 |Mystery           |
+|176255 |Mystery           |
+|176255 |Thriller          |
+|176255 |Horror            |
+|176253 |(no genres listed)|
+|176251 |Comedy            |
+|176251 |Drama             |
+|176249 |Crime             |
+|176249 |Thriller          |
+|176249 |Drama             |
+|176245 |Documentary       |
+|176239 |Fantasy           |
+|176239 |Comedy            |
+|176237 |Fantasy           |
+|176237 |Thriller          |
+|176237 |Action            |
+|176235 |Animation         |
+|176235 |Children          |
+|176233 |(no genres listed)|
+|176231 |(no genres listed)|
+|176229 |Fantasy           |
+|176229 |Comedy            |
+|176227 |Fantasy           |
+|176227 |Comedy            |
+|176225 |Fantasy           |
+|176223 |Sci-Fi            |
+|176223 |Fantasy           |
+|176223 |Comedy            |
+|176221 |(no genres listed)|
+|176219 |Comedy            |
+|176217 |Children          |
+|176217 |Drama             |
+|176215 |Drama             |
+|176215 |Fantasy           |
+|176215 |Horror            |
+|176213 |Drama             |
++-------+------------------+
+only showing top 50 rows
+
+-------------------Task 4-------------------
++-----------+-----+
+|genres     |count|
++-----------+-----+
+|Drama      |19806|
+|Comedy     |13002|
+|Thriller   |6761 |
+|Romance    |6069 |
+|Action     |5775 |
+|Horror     |4448 |
+|Crime      |4247 |
+|Documentary|4122 |
+|Adventure  |3369 |
+|Sci-Fi     |2847 |
++-----------+-----+
+only showing top 10 rows
+
+-------------------Task 5-------------------
++-----------+------+
+|genres     |UserId|
++-----------+------+
+|Drama      |45811 |
+|Comedy     |45811 |
+|Thriller   |45811 |
+|Romance    |45811 |
+|Crime      |45811 |
+|Documentary|45811 |
+|Action     |45811 |
+|Horror     |237239|
+|Adventure  |45811 |
+|Sci-Fi     |45811 |
++-----------+------+
+
+Step 6.1:
+
+Step 6.2:
+
+Step 6.3.1:
+
++------------+------+----------------+
+|ratingsCount|userId|mostCommonGenres|
++------------+------+----------------+
+|18276       |45811 |Drama           |
+|9279        |8659  |Drama           |
+|7638        |270123|Drama           |
+|7515        |179792|Drama           |
+|7410        |228291|Drama           |
+|6320        |243443|Comedy          |
+|6094        |98415 |Drama           |
+|6024        |229879|Drama           |
+|5814        |98787 |Drama           |
+|5701        |172224|Drama           |
++------------+------+----------------+
+
+Step 6.4:
+
++------+------------+----------------+
+|userId|ratingsCount|mostCommonGenres|
++------+------------+----------------+
+|45811 |18276       |Drama           |
+|8659  |9279        |Drama           |
+|270123|7638        |Drama           |
+|179792|7515        |Drama           |
+|228291|7410        |Drama           |
+|243443|6320        |Comedy          |
+|98415 |6094        |Drama           |
+|229879|6024        |Drama           |
+|98787 |5814        |Drama           |
+|172224|5701        |Drama           |
++------+------------+----------------+
+
+-------------------Task 7-------------------
+root
+ |-- title: string (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- avg(rating): double (nullable = true)
+
++--------------------+-------+------------------+
+|               title|movieId|       avg(rating)|
++--------------------+-------+------------------+
+|Great Escape, The...|   1262| 4.105288500120375|
+|Shadow of the Vam...|   4036| 3.426017497147204|
+|     Poseidon (2006)|  45442|2.6754716981132076|
+|        Bobby (2006)|  49280|          3.390625|
+|Guns of Navarone,...|   3654| 3.808001035732781|
+|Leonard Part 6 (1...|   4125|1.5233545647558386|
+| Broken Arrow (1996)|     95|3.1123652554288395|
+|Mothman Prophecie...|   5065| 3.091586463831108|
+|Snakes on a Plane...|  46965| 2.535366370182126|
+|    Westworld (1973)|   2527|3.4205434782608695|
+| Mary and Max (2009)|  71899|3.9366479550922215|
+|         Jack (1996)|    765|  3.05774767146486|
+| Rapture, The (1991)|   2024|3.2764084507042255|
+|Christmas Carol, ...|   1099|3.8114682884448308|
+|       Sliver (1993)|    540|2.7241281809613573|
+| Carried Away (1996)|    630| 3.350210970464135|
+|Hope and Glory (1...|   4117| 3.896460843373494|
+|       S.F.W. (1994)|    386|2.8232189973614776|
+|      Jason X (2002)|   5323| 2.096186440677966|
+| Ice Princess (2005)|  32289|3.1036866359447006|
++--------------------+-------+------------------+
+only showing top 20 rows
+
+root
+ |-- title: string (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- var_samp(rating): double (nullable = true)
+
++--------------------+-------+------------------+
+|               title|movieId|  var_samp(rating)|
++--------------------+-------+------------------+
+|Great Escape, The...|   1262|0.5970595094576296|
+|Shadow of the Vam...|   4036|0.9257459677302627|
+|     Poseidon (2006)|  45442|0.8926933561387566|
+|        Bobby (2006)|  49280|  0.74926614481409|
+|Guns of Navarone,...|   3654|0.5989077358186626|
+|Leonard Part 6 (1...|   4125|0.9196661697610338|
+| Broken Arrow (1996)|     95|0.9181433878893575|
+|Mothman Prophecie...|   5065|0.9475099357670255|
+|Snakes on a Plane...|  46965| 1.218134283088895|
+|    Westworld (1973)|   2527|0.8352269278765707|
+| Mary and Max (2009)|  71899|0.8786563886500487|
+|         Jack (1996)|    765|1.0864342893005559|
+| Rapture, The (1991)|   2024|1.1646954287416624|
+|Christmas Carol, ...|   1099|0.8647011026445265|
+|       Sliver (1993)|    540|0.9241160619979161|
+| Carried Away (1996)|    630|1.2878495315740541|
+|Hope and Glory (1...|   4117|0.6910424762350079|
+|       S.F.W. (1994)|    386|1.1154911979450237|
+|      Jason X (2002)|   5323| 1.369663137390204|
+| Ice Princess (2005)|  32289|1.1462681325230681|
++--------------------+-------+------------------+
+only showing top 20 rows
+
+root
+ |-- title: string (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- avg(rating): double (nullable = true)
+ |-- title: string (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- var_samp(rating): double (nullable = true)
+
++-------+--------------------+-----------+----------------+
+|movieId|               title|avg(rating)|var_samp(rating)|
++-------+--------------------+-----------+----------------+
+| 164849|     Clearcut (1991)|        5.0|             NaN|
+| 122701|Love, Cheat & Ste...|        5.0|             NaN|
+| 151367|Twisted Seduction...|        5.0|             NaN|
+| 174655|         Dina (2017)|        5.0|             NaN|
+| 141297|Out on a Limb (1987)|        5.0|             NaN|
+| 137018|A Sister's Reveng...|        5.0|             NaN|
+| 132912| Emmanuelle 5 (1987)|        5.0|             NaN|
+| 130544|The Hunt for the ...|        5.0|             NaN|
+| 164278|Going Attractions...|        5.0|             NaN|
+| 167666|The Capture of th...|        5.0|             NaN|
++-------+--------------------+-----------+----------------+
+only showing top 10 rows
